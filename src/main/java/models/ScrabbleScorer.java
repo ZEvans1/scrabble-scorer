@@ -1,25 +1,15 @@
 package models;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
-import models.LetterScore;
 
 public class ScrabbleScorer {
-    public Integer runScrabbleScorer(String letter){
+    public Integer runScrabbleScorer(String letters){
         int score = 0;
 
-        char charLetter = letter.charAt(0);
+        char[] charLetters = letters.toCharArray();
 
-        score += LetterScore.checkScore(charLetter);
-
-        //input of letter "f"
-        //"f" is mapped to 4
-        //return 4
-
-        //score += ;
-        //score++;
+        for (char letter : charLetters){
+           score += LetterScore.checkScore(letter);
+        }
 
         return score;
     }
